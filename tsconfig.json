@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "outDir": "dist",
+      "lib": ["esnext"],
+      "esModuleInterop": true,
+      "resolveJsonModule":true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./*"],
+        "@/handlers": ["./src/handlers/*"],
+        "@/modules": ["./src/modules/*"],
+        "@/prisma": ["./prisma/*"]
+      }
+    }
+  }

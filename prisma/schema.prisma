@@ -1,0 +1,72 @@
+// This is the Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// we use uuid because we don't like numbers as IDs
+// we do that in order to not have to figure out a system of unique strings
+// its going to default to uuid, a uuid is a guarantee unique string
+model User {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  username  String    @unique
+  password  String
+  events  Event[]
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  name        String   @db.VarChar(255)
+  // one user can have many events but an event can not belong to many users
+  belongsToId String
+  belongsTo   User     @relation(fields: [belongsToId], references: [id])
+  updates     Update[]
+  @@unique([id, belongsToId])
+}
+
+// enum is a bunch of constants
+enum UPDATE_STATUS {
+  IN_PROGRESS
+  CANCELED
+  DEPRECATED
+}
+
+model Update {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime
+
+  title   String
+  body    String
+  status  UPDATE_STATUS @default(IN_PROGRESS)
+  version String?
+  asset   String?
+
+  eventId   String
+  event     Event       @relation(fields: [eventId], references: [id])
+  UpdatePoints UpdatePoint[]
+}
+
+// at this point we run npx prisma format once again
+// and updates Event[] was created on Event model
+
+model UpdatePoint {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+
+  name        String @db.VarChar(255)
+  description String
+
+  updateId String
+  update   Update @relation(fields: [updateId], references: [id])
+}
