@@ -1,7 +1,11 @@
+# Welcome 
+
+Hey, this is a simple API!
+
 # Dependencies
 
-You will need a clean installation of [NodeJs](https://nodejs.org/en)
- and [Npm](https://www.npmjs.com/).\
+You will [NodeJs](https://nodejs.org/en)
+ and [Npm](https://www.npmjs.com/) installed.\
  Before installing, a usefull tool to manage node versions would be ***[nvm](https://github.com/nvm-sh/nvm)***. 
 
  A database is also needed. In this project i am using [MySql](https://www.mysql.com/), but any other database can work with minor modifications.
