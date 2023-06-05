@@ -6,8 +6,7 @@ You will need a clean installation of [NodeJs](https://nodejs.org/en)
 
  A database is also needed. In this project i am using [MySql](https://www.mysql.com/), but any other database can work with minor modifications.
  
- I would recommend you use a Virtual Environment to manage you development servers, databases and installations, to avoid poluting you native machine. Different versions of various projects can be hard to manage. My pick is [Vagrant](https://www.vagrantup.com/).
-
+ Finaly, you might want to use a Virtual Environment to manage you development servers, databases and installations, to avoid polluting you native machine. Hosting different versions of stuff, on top of having various projects, can be hard to manage. Check out [Vagrant](https://www.vagrantup.com/).
 
 # Quick Start
 
@@ -39,7 +38,7 @@ You can check the server at\
 or visit the docs/client here [http://localhost:3001/api-docs/](http://localhost:3001/api-docs/).
 
 ***Note:***\
-While trying to authenticate with your JWT, using Swagger client, mind the CORS errors. A browser addon [like this one](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related) might be helpfull.
+While trying to authenticate with your JWT using Swagger client, you may encounter CORS errors! Unlilkely, but still, here is [another browser addon](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related) 😄
 
 # Available Tools, Tech Appendix
 
