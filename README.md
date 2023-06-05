@@ -4,7 +4,7 @@ Hey, this is a simple API!
 
 # Dependencies
 
-You will [NodeJs](https://nodejs.org/en)
+You will need [NodeJs](https://nodejs.org/en)
  and [Npm](https://www.npmjs.com/) installed.\
  Before installing, a usefull tool to manage node versions would be ***[nvm](https://github.com/nvm-sh/nvm)***. 
 
