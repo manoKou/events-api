@@ -74,17 +74,22 @@ To debug your API check out this cool [API client for VSCode](https://www.thunde
 
 >Finish the implementation.
 
->Create a seed script for the db.
-
->Install TsDoc to document the codebase.
+>Add unit testing.
 
 >Finish the Swagger docs 
 
 Currently implemented for Swagger: 
+- User Creation
 - JWT authentication
-- event creation. )
+- event creation (if you make the same one twice server dies :))
+- event deletion
 
->Add unit testing.
+Not cool:
+- it has too many leftover schemas and stuff
+
+>Create a seed script for the db.
+
+>Install TsDoc to document the codebase.
 
 >Add a Vagrantfile of an instance that runs a suitable Node environment, turn project into a kind of monorepo.
 
