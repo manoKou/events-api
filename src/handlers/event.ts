@@ -33,15 +33,18 @@ export const getOneEvent = async (req, res) => {
 }
 
 // Create One
-export const createEvent = async (req, res) => {
-    const event = await prisma.event.create({
-        data: {
-            name: req.body.name,
-            belongsToId: req.user.id
-        }
-    })
-
-    res.json({data: event})
+export const createEvent = async (req, res, next) => {
+    try {
+        const event = await prisma.event.create({
+            data: {
+                name: req.body.name,
+                belongsToId: req.user.id
+            }
+        })
+        res.json({data: event})
+    } catch (err) {
+        next(err)
+    }
 }
 
 
